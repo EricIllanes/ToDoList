@@ -8,7 +8,7 @@ const { PORT, URL } = process.env;
 const morgan = require("morgan");
 const app = express();
 require('./models/Users.js')
-require('./models/Task.js')
+require('./models/Tasks.js')
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 app.use(routes);
 
 const startDB = async () =>{
-  await sequelize.sync({alter:true});
+  await sequelize.sync({force:true});
   app.listen(PORT, () => {
     console.log(`Server listening on  ${PORT}`);
   });

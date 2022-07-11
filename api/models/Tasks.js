@@ -1,6 +1,6 @@
 const {sequelize}= require('../db');
 const {DataTypes} = require('sequelize');
-const Posts = sequelize.define('posts', {
+const Tasks = sequelize.define('tasks', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -20,5 +20,5 @@ const Posts = sequelize.define('posts', {
 })
 
 module.exports={
-    Posts
+    Tasks
 }
